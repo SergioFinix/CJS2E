@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Curso JavaScript|Sintaxis JavaScript</title>
+</head>
+<body>
+    <h1>Sintaxis de JavaScript</h1>
+    <script>
+        //Este es un ejemplo de comentario
+        /*Comentario 1 linea 
+          Comentario 2 lineas */
+        
+        /*Cuando declaramos con let, le estamos indicando al programa que esta variable 
+        puede cambiar en tiempo de ejecución*/
+        let saludo = "hola buenas noches";
+        saludo = "nuevo valor";
+
+        //console.log(saludo);
+        /*Asi es como se declara una varaible constante*/
+        const edad = 3.1416;
+        //console.log(edad);
+
+        /*const repeticiones = 10;
+        let incremento = 1;
+
+        for(incremento ; incremento <= repeticiones; incremento ++){
+            console.log("No. repetición : "+incremento+" de :"+repeticiones);
+        }*/
+
+        let nombre = "Sergio";
+        bombre = "enrique";
+        //console.log(nombre);
+
+        /*Una array se definen los valorer entre corchetes 
+        separados por , coma */
+        let miarreglo = [1,2,3,4,5,6,7,8];
+        miarreglo.push("Sergio"); //Aqui agregamos un elemento al array
+        //miarreglo.pop();          // Para quitar el ultimo elemento
+        
+
+        for (let index = 0; index < miarreglo.length; index++) {
+            const element = miarreglo[index] ;
+            if(typeof(element) == "number"){
+                if(element % 2 == 0 ){
+                // console.log("El numero ",element," es par");
+                }
+            else{
+                //console.log("El numero ",element," es impar");
+                }
+            }
+            
+        }
+
+        const esVerdad =  true;
+        const esFalso  =  false;
+
+        //console.log("Valor verdadero : ",esVerdad," valor falso : ",esFalso);
+
+        let persona = {nombre:"Sergio",edad:34,estado:"Hidalgo"};
+        let nombres = persona.edad;
+        console.log(persona);
+        console.log(nombres);
+
+    </script>
+</body>
+</html>
