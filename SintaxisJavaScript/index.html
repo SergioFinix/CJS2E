@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Curso JavaScript|Sintaxis JavaScript</title>
+    <title>Curso JavaScript | Sintaxis JavaScript</title>
 </head>
 <body>
     <h1>Sintaxis de JavaScript</h1>
@@ -58,10 +58,57 @@
 
         //console.log("Valor verdadero : ",esVerdad," valor falso : ",esFalso);
 
-        let persona = {nombre:"Sergio",edad:34,estado:"Hidalgo"};
+        let persona = {nombre:"Sergio",edad:34,estado:"Hidalgo",telefono:"7712212104"};
         let nombres = persona.edad;
-        console.log(persona);
-        console.log(nombres);
+        //console.log(persona);
+        //console.log(nombres);
+
+        /*if = SI se cumple la condición se eejcuta el codigo asiganado y si no tambien el 
+        ejecuta el codigo asiganado*/
+        //ejempo del operado AND &&
+        const n1 =  "5";
+        const n2 =  "15";
+        /*if(n1 === n2){
+            console.log("son iguales");
+        }else{
+            console.log("no son iguales");
+        }*/
+
+        /*if(n1 !== n2 ){
+            console.log("no son iguales");
+        }else{
+            console.log("Son iguales");
+        }*/
+
+        if(parseInt(n1) >= parseInt(n2))
+        {
+            //console.log("El valor de n1 ",n1," y de n2 el mayor");
+        }else{
+           // console.log("El valor de n1 ",n1," y de n2 ",n2, "son diferentes.");
+        }
+
+        function saludar (n2){
+            return "Hola, "+n2;
+        }
+
+        function despedir(n2){
+            let despedida = "Adios";
+            return despedida;
+        }
+
+        //console.log(saludar(n2));
+        //console.log(despedir(n2));
+
+        /*let frutas = ["Manzana","Piña","Pera"];
+        console.log(frutas.length);
+        
+        frutas.push("Tamarindo");
+
+        console.log(frutas.length);*/
+
+        
+
+
 
     </script>
 </body>
