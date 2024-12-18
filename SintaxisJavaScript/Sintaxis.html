@@ -7,7 +7,39 @@
 </head>
 <body>
     <script>
-        console.log("Hola Iván");
+        console.log("Hola soy Iván");
+        let productos=[];
+        
+        let producto1={
+            nombre:"Dell Vostro",
+            precio:17000,
+            cantidad:5,
+            categoria:"Computadoras de Escritorio"
+        };
+        let producto2={
+            nombre:"HP Pavilio",
+            precio:26000,
+            cantidad:2,
+            categoria:"Portátiles"
+        };
+        let producto3={
+            nombre:"Samsung Galaxy A40",
+            precio:8000,
+            cantidad:35,
+            categoria:"Teléfonos"
+        };
+
+        productos.push(producto1);
+        productos.push(producto2);
+        productos.push(producto3);
+        //productos.push("Lista de Productos");
+        let total=0;
+        for (let i=0; i < productos.length; i++){
+            console.log("Nombre: ",productos[i].nombre,"Costo: ",productos[i].precio);
+            total+=productos[i].precio;
+            //total=total+productos[i].precio;
+        }
+        console.log("Total: ",total);
     </script>
 </body>
 </html>
