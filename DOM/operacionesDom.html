@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Operaciones DOM</title>
+</head>
+<body>
+    <p>Número 1: </p><input id="num1" type="text">
+    <p>Número 2: </p><input id="num2" type="text">
+    <select id="operaciones">
+        <option value="+">suma</option>
+        <option value="-">resta</option>
+        <option value="*">multi</option>
+        <option value="/">divi</option>
+    </select>
+    <button onclick="operar()">Operar</button>
+    <p id="resultado"></p>
+
+    <ul id="lista">
+        <li>Val1</li>
+        <li>Val2</li>
+        <li>Val3</li>
+    </ul>
+    
+    <script>
+        function operar(){
+            let num1 = document.getElementById("num1").value;
+            let num2 = document.getElementById("num2").value;
+            let operaciones = document.getElementById("operaciones").value;
+            let resultado = 0;
+            
+            if(operaciones == "+"){
+                resultado = parseInt(num1) + parseInt(num2); 
+            }else if(operaciones == "-"){
+                resultado = parseInt(num1) - parseInt(num2); 
+            }else if(operaciones == "*"){
+                resultado = parseInt(num1) * parseInt(num2); 
+            }else if(operaciones == "/"){
+                resultado = parseInt(num1) / parseInt(num2); 
+            }
+            document.getElementById("resultado").innerHTML = "<p>El resultado de la operación "+operaciones+" es : "+resultado+"</p>";
+
+            const lista = document.getElementById("lista"); //Tomar control de nuestro compoente Lista
+            
+            const nuevoElemento = document.createElement("li"); //Definimos el componente a incluir
+            nuevoElemento.textContent = "Nuevo elemento agregado"; //Le indicamos el texto que el nuevo sub menu
+            
+            
+            lista.appendChild(nuevoElemento); //Agregando el nuevo componente
+        }
+    </script>
+</body>
+</html>
