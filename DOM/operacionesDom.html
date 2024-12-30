@@ -8,6 +8,7 @@
 <body>
     <p>Número 1: </p><input id="num1" type="text">
     <p>Número 2: </p><input id="num2" type="text">
+    <p>Valor select: </p><input id="valSelect" type="text">
     <select id="operaciones">
         <option value="+">suma</option>
         <option value="-">resta</option>
@@ -17,11 +18,20 @@
     <button onclick="operar()">Operar</button>
     <p id="resultado"></p>
 
-    <ul id="lista">
-        <li>Val1</li>
-        <li>Val2</li>
-        <li>Val3</li>
-    </ul>
+   <div>
+        <ul id="lista">
+            <li>Val1</li>
+            <li>Val2</li>
+            <li>Val3</li>
+        </ul>
+    </div>
+    
+
+    <button onclick="crearSelect()">Crear select</button>
+    <div id="areaSelect"></div>
+    <button onclick="agregarItem()">Agregar Item</button>
+
+    <textarea id="areaTexto"></textarea>
     
     <script>
         function operar(){
@@ -45,9 +55,29 @@
             
             const nuevoElemento = document.createElement("li"); //Definimos el componente a incluir
             nuevoElemento.textContent = "Nuevo elemento agregado"; //Le indicamos el texto que el nuevo sub menu
-            
-            
             lista.appendChild(nuevoElemento); //Agregando el nuevo componente
+
+            
+            
+        }
+
+        function agregarItem(){
+            let valorItem = document.getElementById("valSelect").value;
+
+            if(valorItem != "" && valorItem.length > 3){
+            const opciones = document.getElementById("opciones");
+            const nuevaOpcion = document.createElement("option");
+            nuevaOpcion.textContent = valorItem;
+            nuevaOpcion.value = valorItem;
+            opciones.appendChild(nuevaOpcion); //Agregando el nuevo componente
+            }else{
+                alert("El valor dadó es incorrecto¡");
+            }
+        }
+
+        function crearSelect(){
+            let area = document.getElementById("areaSelect");
+            area.innerHTML = " <select id='opciones'> <option value='1'>1</option> </select> ";   
         }
     </script>
 </body>
