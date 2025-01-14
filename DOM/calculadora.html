@@ -1,0 +1,55 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora DOM</title>
+</head>
+<body>
+    <h1>Calculadora DOM</h1>
+    <p id="par1">Valor 1</p>
+    <input id="v1" type="text" value="">
+    <p id="par2">Valor 2</p>
+    <input id="v2" type="text" value="">
+   
+    <select id="opciones">
+        <option value="suma">+</option>
+        <option value="resta">-</option>
+        <option value="multiplicacion">*</option>
+        <option value="division">/</option>
+    </select>
+    <button onclick="Calcular()">Calcular</button>
+    <p id="resultado"></p>
+ 
+    
+    <script>
+        function Calcular(){
+            let num1=document.getElementById("v1").value;
+            let num2=document.getElementById("v2").value;
+            let operaciones=document.getElementById("opciones").value;
+            let resultado=0;
+        
+            if (operaciones=="suma"){
+                resultado=parseInt(num1)+parseInt(num2);
+            }
+            else if (operaciones=="resta"){
+                resultado=parseInt(num1)-parseInt(num2);
+            }
+            else if (operaciones=="multiplicacion"){
+                resultado=parseInt(num1)*parseInt(num2);
+            }
+            else if (operaciones=="division"){
+                resultado=parseInt(num1)/parseInt(num2);
+            }
+            document.getElementById("resultado").innerHTML="<p>El resultado de la operación " +operaciones+ " es: " +resultado+ "</p>";
+       
+        /*console.log(num1);
+        console.log(num2);
+        console.log(operaciones);*/
+
+        }
+    </script>
+</body>
+</html>

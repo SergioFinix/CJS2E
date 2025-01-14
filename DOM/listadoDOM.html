@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Listado DOM</title>
+</head>
+<body>
+    <h1>Listado de Frutas</h1>
+    <input id="miInpunt" type="text" value="">
+    <button onclick="Anexar()">Anexar Producto</button>
+    <ul id="lista">
+        <li>Manzanas</li>
+        <li>Naranjas</li>
+        <li>Peras</li>
+    </ul>
+    <script>
+         function Anexar(){
+            var miInput=document.getElementById("miInpunt").value;
+            const lista = document.getElementById("lista");
+            const nuevoElemento = document.createElement("li");
+            nuevoElemento.textContent = miInput; //Le indicamos el texto que el nuevo sub menu
+            lista.appendChild(nuevoElemento); //Agregando el nuevo componente
+            document.getElementById("miInpunt").value = "";
+        }
+    </script>
+</body>
+</html>2
