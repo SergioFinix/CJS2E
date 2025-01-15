@@ -49,7 +49,7 @@
 </html> -->
 
 
-<!doctype html>
+<!--<!doctype html>
 <html lang="es">
   <head>
     <meta charset="utf-8">
@@ -58,18 +58,20 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
   </head>
   <body>
-    <div>
-      <p>Números de lineas</p>
-      <input type="text" id="numerosLineas">
-      
-      <p>Nombre de linea</p>
-      <input type="text" id="nombreLinea">
-
-      <p>contenido</p>
-      <textarea id="contenido"></textarea>
-    </div>
     <div class="container mt-5">
-        <p class="fs-1">Accordion Dinamico</p>
+      <p class="fs-1">Accordion Dinamico</p>
+
+      <div class="pb-3">
+        <p>Números de lineas</p>
+        <input type="text" id="numerosLineas">
+        
+        <p>Nombre de linea</p>
+        <input type="text" id="nombreLinea">
+
+        <p>contenido</p>
+        <textarea id="contenido"></textarea>
+      </div>
+    
         <div class="card w-100 mb-3">
             <div class="card-body">
                 <div class="accordion mb-3" id="accordionExample">
@@ -79,40 +81,123 @@
             </div>
         </div>
     </div>
-    <!-- <p>texto para comentar</p> -->
 
     <script>
       let itemAccordion = 0;
 
       function agregarItem() {
         itemAccordion++;
-
+        let numerosLineas = document.getElementById("numerosLineas").value;
         let nombrelinea = document.getElementById("nombreLinea").value;
         let contenido   = document.getElementById("contenido") .value;
 
-        let nuevoItem = document.createElement('div');
+        for (let i = 0; i < numerosLineas; i++){
+          let nuevoItem = document.createElement('div');
 
-        //nuevoItem = document.createElement("div");
-        nuevoItem.className = "accordion-item";
+          //nuevoItem = document.createElement("div");
+          nuevoItem.className = "accordion-item";
 
-        let nuevoHeaderId = 'heading' + itemAccordion;
-        let nuevoItemId = 'collapse' + itemAccordion;
+          let nuevoHeaderId = 'heading' + itemAccordion + i;
+          let nuevoItemId = 'collapse' + itemAccordion + i;
+
+          
+          nuevoItem.innerHTML = `
+            <h2 class="accordion-header" id="${nuevoHeaderId}">
+              <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#${nuevoItemId}" aria-expanded="false" aria-controls="${nuevoItemId}">
+                Accordion #${i + 1}
+              </button>
+            </h2>
+            <div id="${nuevoItemId}" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+              <div class="accordion-body">
+                <strong>Este es el body Accordion #${i + 1}.</strong>
+              </div>
+            </div>
+          `;
+
+          document.getElementById('accordionExample').appendChild(nuevoItem);
+        }
+      }
+    </script>
+    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  </body>  
+</html>-->
+
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Accordion Dinamico</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  </head>
+  <body>
+    <div class="container mt-5 w-50">
+      <p class="fs-1">Accordion Dinamico</p>
+
+      <div class="mb-5">
+        <label class="form-label">Números de lineas</label>
+        <input class="form-control" type="text" id="numerosLineas">
+        
+        <label class="form-label">Nombre de linea</label>
+        <input class="form-control" type="text" id="nombreLinea">
+
+        <label class="form-label">Contenido</label>
+        <textarea class="form-control" id="contenido"></textarea>
+      </div>
+    
+        <div class="card w-100 mb-3">
+            <div class="card-body">
+                <div class="accordion mb-3" id="accordionExample">
+            
+                </div>
+                <button onclick="generarAcordion()" class="btn btn-primary">Agregar</button>
+            </div>
+        </div>
+    </div>
+    <!-- <p>texto para comentar</p> -->
+
+    <script>
+      let itemAccordion = 0;
+
+      function agregarItem(numerosLineas) {
+        itemAccordion++;
+        
+        let nombrelinea = document.getElementById("nombreLinea").value;
+        let contenido   = document.getElementById("contenido") .value;
 
         
-        nuevoItem.innerHTML = `
-          <h2 class="accordion-header" id="${nuevoHeaderId}">
-            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#${nuevoItemId}" aria-expanded="false" aria-controls="${nuevoItemId}">
-              Accordion #${itemAccordion}| ${nombrelinea}
-            </button>
-          </h2>
-          <div id="${nuevoItemId}" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
-            <div class="accordion-body">
-              <strong>Este es el body Accordion #${itemAccordion}.</strong> ${contenido}.
-            </div>
-          </div>
-        `;
+          let nuevoItem = document.createElement('div');
 
-        document.getElementById('accordionExample').appendChild(nuevoItem);
+          //nuevoItem = document.createElement("div");
+          nuevoItem.className = "accordion-item";
+
+          let nuevoHeaderId = 'heading' + itemAccordion + numerosLineas;
+          let nuevoItemId = 'collapse' + itemAccordion + numerosLineas;
+
+          
+          nuevoItem.innerHTML = `
+            <h2 class="accordion-header" id="${nuevoHeaderId}">
+              <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#${nuevoItemId}" aria-expanded="false" aria-controls="${nuevoItemId}">
+                Accordion #${numerosLineas + 1}
+              </button>
+            </h2>
+            <div id="${nuevoItemId}" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+              <div class="accordion-body">
+                <strong>Este es el body Accordion #${numerosLineas + 1}.</strong>
+              </div>
+            </div>
+          `;
+
+          document.getElementById('accordionExample').appendChild(nuevoItem);
+        
+      }
+      function generarAcordion () {
+        let numerosLineas = document.getElementById("numerosLineas").value;
+        for (let i = 0; i < numerosLineas; i++){
+          agregarItem(i);
+        }
+        
       }
     </script>
     
