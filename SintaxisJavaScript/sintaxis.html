@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Problema de sintaxis</title>
+</head>
+<body>
+    <script>
+        console.log("Hola Francisco");
+
+        let productos = []
+
+       let producto1 = {
+            nombre: "Laptop",
+            precio: 18000,
+            cantidad: 5,
+            categoria: "Computadoras"
+        }
+
+        let producto2 = {
+            nombre: "Laptop2",
+            precio: 28000,
+            cantidad: 5,
+            categoria: "Computadoras"
+        }
+
+        let producto3 = {
+            nombre: "Laptop3",
+            precio: 38000,
+            cantidad: 5,
+            categoria: "Computadoras"
+        } 
+
+        productos.push(producto1);
+        productos.push(producto2);
+        productos.push(producto3);
+        
+
+        for (let i = 0; i < productos.length; i++){
+            console.log(productos[i].nombre, " ", productos[i].precio);
+        }
+        
+    </script>
+</body>
+</html>

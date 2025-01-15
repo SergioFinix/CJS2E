@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Introducción al DOM</title>
+</head>
+<body>
+    <h1>Introducción al DOM</h1>
+    <p id="par1">Parrafo 1</p>
+    <p id="par2">Parrafo 2</p>
+    <input id="saludos" type="text" value="hola">
+    
+    <select id="opciones">
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+    </select>
+    
+    <button onclick="saludar()">Saludo</button>
+    <script>
+        const parrafo1 = document.getElementById("par1").textContent;
+        console.log(parrafo1);
+        
+        function saludar(){
+            const valor = document.getElementById("opciones").value;
+
+            console.log(valor);
+        }
+    </script>
+</body>
+</html>

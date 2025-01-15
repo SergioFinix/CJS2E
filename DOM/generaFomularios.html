@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Formulario bootstrap</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  </head>
+  <body>
+    <div class="container mt-5">
+      <p class="fs-1">Formulario bootstrap</p>
+      <div class="card w-100 mb-3">
+          <div class="card-body">
+              <h5 class="card-title">Añadir campo</h5>
+              <select id="opciones" class="form-select mb-3">
+                  <option value="1">Linea de texto</option>
+                  <option value="2">Área de texto</option>
+                  <option value="3">Acordion</option>
+              </select>
+              <button onclick="agregarItem()" class="btn btn-primary">Selecciona</button>
+          </div>
+      </div>
+      <div id="contenedorTarjetas" class="w-100"></div>
+    </div>
+    <!-- TAREA <div>
+      <div class="accordion" id="accordionExample">
+
+        <div class="accordion-item">
+
+          <h2 class="accordion-header">
+            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+              Accordion Item #1
+            </button>
+          </h2>
+
+          <div id="collapseOne" class="accordion-collapse collapse show" data-bs-parent="#accordionExample">
+            <div class="accordion-body">
+              <strong>This is the first item's accordion body.</strong> It is shown by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </div> -->
+
+    <script>
+      function agregarItem() {
+        let valorItem = document.getElementById("opciones").value;
+        let contenedor = document.getElementById("contenedorTarjetas");
+        let tarjeta, tarjetaBody, inputElemento;
+  
+        tarjeta = document.createElement("div");
+        tarjeta.className = "card w-100 mb-3";
+  
+        tarjetaBody = document.createElement("div");
+        tarjetaBody.className = "card-body";
+  
+        if (valorItem == "1") {
+            inputElemento = document.createElement("input");
+            inputElemento.className = "form-control";
+            inputElemento.placeholder = "Escribe algo...";
+        } else if (valorItem == "2") {
+            inputElemento = document.createElement("textarea");
+            inputElemento.className = "form-control";
+            inputElemento.placeholder = "Escribe un párrafo...";
+        } else if (valorItem === "3") {
+            inputElemento = document.createElement("select");
+            inputElemento.className = "form-select";
+            
+            const option1 = document.createElement("option");
+            option1.value = "opcion1";
+            option1.textContent = "Opción 1";
+            inputElemento.appendChild(option1);
+  
+            const option2 = document.createElement("option");
+            option2.value = "opcion2";
+            option2.textContent = "Opción 2";
+            inputElemento.appendChild(option2);
+  
+            const option3 = document.createElement("option");
+            option3.value = "opcion3";
+            option3.textContent = "Opción 3";
+            inputElemento.appendChild(option3);
+        }
+  
+        tarjetaBody.appendChild(inputElemento);
+        tarjeta.appendChild(tarjetaBody);
+        contenedor.appendChild(tarjeta);
+      }
+    </script>
+    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  </body>  
+</html>
