@@ -28,7 +28,7 @@
     const numberInput = document.getElementById('numero');
     const boton = document.getElementById('llamarApi');
     const resultado = document.getElementById('resultado');
-
+    const correo = document.getElementById('correo');
     
     boton.addEventListener('click', () => {
       const numberValue = parseInt(numberInput.value.trim()); // Convertir el valor de input a número, con .trim() para eliminar espacios
@@ -42,7 +42,7 @@
       hacerLlamadaApi(numberValue)
         .then((data) => {
           // Mostrar resultado exitoso si la API devuelve datos
-          mostrarResultado(`Éxito: Usuario encontrado - ${data.name}`, true);
+          mostrarResultado(`Éxito: Usuario encontrado - ${data.name} - ${data.email} - ${data.address.city}`, true);
         })
         .catch((error) => {
           // Mostrar mensaje de error si la llamada a la API falla
