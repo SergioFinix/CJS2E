@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ejemplo de Async/Await</title>
+  <link rel="stylesheet" href="css/styles2.css">
+</head>
+<body>
+<div class="container">
+    <h1>Usuarios</h1>
+    <div class="card">
+        <!-- Botón para cargar usuarios -->
+        <button id="loadButton">Cargar Usuarios</button>
+
+        <!-- Select para mostrar los usuarios cargados -->
+        <select id="userSelect" class="user-list" disabled>
+            <option value="">Selecciona un usuario</option>
+        </select>
+
+        <!-- Área para mostrar los mensajes de error -->
+        <div id="errorMessage" class="error-message"></div>
+    </div>
+
+    <!-- Contenedor para mostrar las tarjetas de los usuarios -->
+    <div id="userCards" class="user-cards-container">
+        <!-- Las tarjetas de usuario se agregarán aquí dinámicamente -->
+        <div id="userCardTemplate" class="card" style="display:none;">
+            <h3 id="userName"></h3>
+            <p id="userUsername"></p>
+            <p id="userEmail"></p>
+            <p id="userCity"></p>
+        </div>
+    </div>
+</div>
+
+<script src="javascript/script2.js"></script>
+</body>
+</html>
